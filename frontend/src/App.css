@@ -1,0 +1,28 @@
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.content {
+    height: 80vh;
+}
+
+/* .navbar{
+    background-color: blue !important;
+} */
+.register-page{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 90vh;
+}
+/* tansection page */
+.filters{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px 20px;
+    box-shadow: 0 0 3px gray;
+}
