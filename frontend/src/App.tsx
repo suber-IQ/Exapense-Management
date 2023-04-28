@@ -6,6 +6,8 @@ import "./App.css";
 import Register from "./pages/Register";
 import Login from "./pages/Login";
 
+
+
 const App = () => {
   return (
     <>
@@ -27,8 +29,8 @@ const App = () => {
 };
 
 
-export function ProtectedRoutes(props){
-  if(localStorage.getItem('user')){
+export function ProtectedRoutes(props: any){
+  if(localStorage.getItem("user")){
     return props.children
   }else{
     return <Navigate to={'/login'} />

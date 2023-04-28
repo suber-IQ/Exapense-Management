@@ -1,5 +1,6 @@
-import express, { Application} from 'express';
+import express, { Application, Request, Response} from 'express';
 import http from 'http'
+import path from 'path'
 // import bodyParser from 'body-parser'
 import cors from 'cors'
 import morgan from 'morgan';
@@ -34,12 +35,16 @@ export class ManagementServer{
       //    methods: ['GET','POST','PUT','DELETE','OPTIONS']
       // }));
       app.use(cors());
+      app.use(express.static(path.join(__dirname,'./client/dist')))
    }
    private standardMiddleware(app: Application): void {
       app.use(morgan('dev'));
       app.use(express.json());
    }
    private routeMiddleware(app: Application): void {
+      app.get('*',(req: Request,res: Response) => {
+         res.sendFile(path.join(__dirname,'./client/dist/index.html'))
+      })
       applicationRoutes(app);
    }
 
@@ -53,7 +58,6 @@ export class ManagementServer{
          this.startHttpServer(httpServer);
        } catch (error) {
          console.log(error);
-
        }
    }
 

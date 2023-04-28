@@ -9,7 +9,7 @@ type TLayout = {
 const Layout: React.FC<TLayout> = ({children}) => {
   return (
     <>
-       <Header />
+       <Header _id={""} createdAt={""} name={""} password={""} updatedAt={""} __v={0} />
        <div className="content">
           {children}
        </div>
