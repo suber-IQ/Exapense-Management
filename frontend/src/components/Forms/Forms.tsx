@@ -3,17 +3,17 @@ import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 
 export type TFormValue = {
-    amount: number;
-    type: string;
-    date: string;
-    category: string;
-    refrence?: string;
-    description: string
-    createdAt?: string;
-    userid?:string;
-    updatedAt?: string;
+  amount: number;
+  type: string;
+  date: string;
+  category: string;
+  refrence?: string;
+  description: string
+  createdAt?: string;
+  userid?:string;
+  updatedAt?: string;
+  _id?: string ;
     __v?: number;
-    _id?: string;
 }
 
 type TFormProps = {

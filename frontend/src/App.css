@@ -5,9 +5,7 @@
     box-sizing: border-box;
 }
 
-.content {
-    height: 80vh;
-}
+
 
 /* .navbar{
     background-color: blue !important;
@@ -25,4 +23,13 @@
     justify-content: space-between;
     padding: 15px 20px;
     box-shadow: 0 0 3px gray;
+}
+
+
+/* ant icons */
+.active-icon{
+    color: red;
+}
+.inactive-icon{
+    color: gray;
 }

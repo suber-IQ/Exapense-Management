@@ -35,6 +35,32 @@ class TransectionController{
             return;
         }
     }
+    public async deleteTransection(req: Request, res: Response): Promise<void>{
+        try {
+            const deletedTransection = await TransectionModel.findOneAndDelete({_id: req.params.id});
+            if (!deletedTransection) {
+                res.status(404).json({ message: 'Transection not found' });
+                return;
+              }
+           res.status(200).send("Transaction Deleted Successfully..")
+            
+        } catch (error) {
+            console.log(error);
+            res.status(500).json(error);
+            return;
+        }
+    }
+    public async editTransection(req: Request, res: Response): Promise<void>{
+        try {
+           await TransectionModel.findOneAndUpdate({ _id: req.body.transactionId}, req.body.payload);
+           res.status(200).send("Edit Successfully..")
+            
+        } catch (error) {
+            console.log(error);
+            res.status(500).json(error);
+            return;
+        }
+    }
 }
 
 

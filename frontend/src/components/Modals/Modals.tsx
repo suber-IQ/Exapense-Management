@@ -8,10 +8,11 @@ type TModal ={
   values: TFormValue;
   setValues: React.Dispatch<React.SetStateAction<TFormValue>>;
   onSubmit: (values: TFormValue) => void;
+  title: string;
 }
 
 
-const Modals: React.FC<TModal> = ({show, setShow, values,setValues,onSubmit}) => {
+const Modals: React.FC<TModal> = ({show, setShow, values,setValues,onSubmit, title}) => {
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
@@ -26,7 +27,7 @@ const Modals: React.FC<TModal> = ({show, setShow, values,setValues,onSubmit}) =>
 
       <Modal show={show} onHide={handleClose}>
         <Modal.Header closeButton>
-          <Modal.Title>Add Transection</Modal.Title>
+          <Modal.Title>{title}</Modal.Title>
         </Modal.Header>
         <Modal.Body>
           <Forms values={values} setValues={setValues} onSubmit={onSubmit}  />
